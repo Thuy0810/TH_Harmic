@@ -352,7 +352,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-content texx">
-                                                <a class="product-name" href="single-product.html">Peanut Big Bean</a>
+                                                <a class="product-name" href="single-product.html">@item.Title</a>
                                                 <div class="price-box pb-1">
                                                     @if(item.PriceSale == 0)
                                                     {
@@ -360,8 +360,9 @@
                                                     }
                                                     else
                                                     {
-                                                        
-                                                        <span class="new-price text-danger">@item.PriceSale</span>
+
+                                                        <span class="new-price text-danger"> $@Model.PriceSale</span>
+                                                        <span class="new-price text-black"> $@Model.Price</span>
                                                     }
                                                 </div>
                                                 <div class="rating-box">
