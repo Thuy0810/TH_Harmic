@@ -6,7 +6,12 @@ namespace TH_Harmic.Controllers
 {
     public class BlogController: Controller
     {
-        private readonly Th2Context _context;
+        private readonly TH_HarmicContext _context;
+
+        public BlogController (TH_HarmicContext context)
+        {
+            _context = context;
+        }
 
         public IActionResult Index()
         {
@@ -25,6 +30,7 @@ namespace TH_Harmic.Controllers
                 return NotFound();
             }
             ViewBag.blogComment= _context.TbBlogComments.Where(i=> i.BlogId==id).ToList();
+            ViewBag.productNew = _context.TbProducts.Where(m => m.IsNew).ToList();
             return View(blog);
         }
     }

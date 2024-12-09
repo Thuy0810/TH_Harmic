@@ -233,9 +233,7 @@
 </div>
 <!-- Banner Area End Here -->
 <!-- Begin Product Area -->
-<div class="product-area section-space-y-axis-100">
-   
-</div>
+
 <!-- Product Area End Here -->
 <!-- Begin Banner Area -->
 <div class="banner-area banner-with-parallax py-10" data-bg-image="~/assets/images/banner/2-1-1920x523.jpg">
@@ -300,17 +298,19 @@
                     <div class="swiper-wrapper">
                         @foreach (var item in productNew.Where(i => (bool)i.IsActive))
                         {
+                            string sUrl = $"/product/{item.Alias}-{item.ProductId}.html";
                             <div class="swiper-slide">
                                 <div class="product-list-item">
                                     <div class="product-img img-zoom-effect">
-                                        <a href="single-product.html">
+                                        <a href="@sUrl">
                                             <img class="img-full" src="@item.Image" alt="Product Images">
                                         </a>
                                     </div>
                                     <div class="product-content">
-                                        <a class="product-name" href="single-product.html">@item.Title</a>
+                                        <a class="product-name" href="@sUrl">@item.Title</a>
                                         <div class="price-box pb-1">
-                                            <span class="new-price">@item.PriceSale</span>
+                                            <span class="new-price "> $ @item.Price</span>
+                                            <span class="new-price text-danger"> $ @item.PriceSale</span>
                                         </div>
                                         <div class="rating-box-wrap">
                                             <div class="rating-box">

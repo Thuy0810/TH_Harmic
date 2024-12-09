@@ -1,0 +1,75 @@
+﻿@model IEnumerable<TH_Harmic.Models.TbMenu>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="mb-2">
+                <div class="col-sm-12">
+                    <h1>Quản lý menu </h1>
+                </div>
+               
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="">
+                <div >
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Thêm mới</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th >STT</th>
+                                        <th>Tiêu đề</th>
+                                        <th>Alias</th>
+                                        <th >Cấp</th>
+                                        <th>Vị trí</th>
+                                        <th>Hiện</th>
+                                        <th>Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        int i = 1;
+                                    }
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td> @(i++)</td>
+                                            <td> @Html.DisplayFor(modelItem=> item.Title)</td>
+                                            <td> @Html.DisplayFor(modelItem=> item.Alias)</td>
+                                            <td> @Html.DisplayFor(modelItem=>item.Levels)</td>
+                                            <td> @Html.DisplayFor(modelItem=> item.Position)</td>
+                                            <td> @Html.DisplayFor(modelItem=> item.IsActive)</td>
+                                            <td>
+                                                <a asp-action="Edit" asp-route-id="@item.MenuId" class="btn btn-primary">Sửa</a>
+                                                <a asp-action="Details" asp-route-id="@item.MenuId" class="btn btn-info" >Chi tiết</a>
+                                                <a asp-action="Delete" asp-route-id="@item.MenuId" class="btn btn-danger">Xoá </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                       
+                    <!-- /.card -->
+
+                 
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>

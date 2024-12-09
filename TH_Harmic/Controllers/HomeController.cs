@@ -6,10 +6,10 @@ namespace TH_Harmic.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly Th2Context _context;
+        private readonly TH_HarmicContext _context;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController (Th2Context context, ILogger<HomeController> logger)
+        public HomeController (TH_HarmicContext context, ILogger<HomeController> logger)
         {
             _context = context;
             _logger = logger;

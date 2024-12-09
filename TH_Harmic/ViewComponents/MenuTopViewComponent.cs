@@ -6,9 +6,9 @@ namespace TH_Harmic.ViewComponents
 {
     public class MenuTopViewComponent : ViewComponent
     {
-        private readonly Th2Context _context;
+        private readonly TH_HarmicContext _context;
 
-        public MenuTopViewComponent(Th2Context context)
+        public MenuTopViewComponent(TH_HarmicContext context)
         {
             _context = context;
         }

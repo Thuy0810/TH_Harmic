@@ -1,0 +1,83 @@
+﻿@model IEnumerable<TH_Harmic.Models.TbProduct>
+
+@{
+    ViewData["Title"] = "Quản lý sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="mb-2">
+                <div class="col-sm-12">
+                    <h1>Quản lý sản phẩm</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh sách sản phẩm</h3>
+                        <div class="card-tools">
+                            <a asp-action="Create" class="btn btn-success">Thêm mới</a>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tiêu đề</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Giá</th>
+                                    <th>Giá khuyến mãi</th>
+                                    <th>Số lượng</th>
+                                    <th>Mới</th>
+                                    <th>Bán chạy</th>
+                                    <th>Hoạt động</th>
+                                    <th>Đánh giá</th>
+                                    <th>Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int i = 1;
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@(i++)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                                        <td><img src="@Html.DisplayFor(modelItem => item.Image)" width="50" height="50" /></td>
+                                        <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.PriceSale)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.IsNew)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.IsBestSeller)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.IsActive)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Star)</td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-primary">Sửa</a>
+                                            <a asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-info">Chi tiết</a>
+                                            <a asp-action="Delete" asp-route-id="@item.ProductId" class="btn btn-danger">Xoá</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>

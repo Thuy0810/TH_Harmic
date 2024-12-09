@@ -6,8 +6,8 @@ namespace TH_Harmic.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly Th2Context _context;
-        public ProductController(Th2Context context)
+        private readonly TH_HarmicContext _context;
+        public ProductController(TH_HarmicContext context)
         {
             _context = context;
         }

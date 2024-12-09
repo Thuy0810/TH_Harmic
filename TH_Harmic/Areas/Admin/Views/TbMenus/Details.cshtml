@@ -1,0 +1,101 @@
+﻿@model TH_Harmic.Models.TbMenu
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class=" mb-2">
+                <div class="col-sm-12">
+                    <h1>Chi tiết menu</h1>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Chi tiết menu</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form asp-action="Edit">
+                           
+                            <div class="card-body">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                
+                                <div class="form-group">
+                                    <label asp-for="Title" class="control-label">Tiêu đề</label>
+                                    <input disabled asp-for="Title" class="form-control" />
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Alias" class="control-label"></label>
+                                    <input disabled asp-for="Alias" class="form-control" />
+                                    <span asp-validation-for="Alias" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Description" class="control-label">Mô tả</label>
+                                    <input disabled asp-for="Description" class="form-control" />
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Levels" class="control-label">Mức</label>
+                                    <input disabled asp-for="Levels" class="form-control" />
+                                    <span asp-validation-for="Levels" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ParentId" class="control-label">Menu cha</label>
+                                    <input disabled asp-for="ParentId" class="form-control" />
+                                    <span asp-validation-for="ParentId" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Position" class="control-label">Vị trí</label>
+                                    <input disabled asp-for="Position" class="form-control" />
+                                    <span asp-validation-for="Position" class="text-danger"></span>
+                                </div>
+
+
+                                <div class="form-group form-check">
+                                    <label class="form-check-label">
+                                        <input  disabled class="form-check-input" asp-for="IsActive" /> Hiển thị
+                                    </label>
+                                </div>
+                                <div class="d-grid">
+                                    <div></div>
+                                    <a asp-action="Edit" asp-route-id="@Model?.MenuId" class="btn btn-primary btn-block">Sửa</a>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+
+
+
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+
+

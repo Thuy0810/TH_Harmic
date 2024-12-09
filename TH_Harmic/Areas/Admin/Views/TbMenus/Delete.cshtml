@@ -1,0 +1,81 @@
+﻿@model TH_Harmic.Models.TbMenu
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class=" mb-2">
+                <div class="col-sm-12">
+                    <h1>Xóa menu</h1>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Xóa menu</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                      
+                            <div class="card-body">
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail">Tiêu đề</label>
+                                    @Html.DisplayFor(model=>model.Title)
+                                </div>
+                                <div class="form-group">
+                                <label for="exampleInputEmail">Alias: </label>
+                                @Html.DisplayFor(model => model.Alias)
+                                </div>
+                                <div class="form-group">
+                                <label for="exampleInputEmail">Mô tả</label>
+                                @Html.DisplayFor(model => model.Description)
+                                </div>
+                                <div class="form-group">
+                                <label for="exampleInputEmail">Mức</label>
+                                @Html.DisplayFor(model => model.Levels)
+                                </div>
+                                <div class="form-group">
+                                <label for="exampleInputEmail">Menu cha</label>
+                                @Html.DisplayFor(model => model.ParentId)
+                                </div>
+                               
+
+                                <div class="form-group form-check p-0">
+                                <label for="exampleInputEmail">Hiện</label>
+                                @Html.DisplayFor(model => model.IsActive)
+                                </div>
+                                
+                            <form asp-action="Delete">
+                                <input type="hidden" asp-for="MenuId" />
+                                <input type="submit" value="Xóa" class="btn btn-danger" /> |
+                                <a asp-action="Index" class=" btn btn-primary">Quay lại </a>
+                            </form>
+                            </div>
+                        
+                    </div>
+                    <!-- /.card -->
+
+
+
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>

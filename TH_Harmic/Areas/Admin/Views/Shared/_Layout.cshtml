@@ -25,6 +25,8 @@
   <link rel="stylesheet" href="~/admin/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="~/admin/plugins/summernote/summernote-bs4.min.css">
+  <script src="~/admin/plugins/jquery/jquery.min.js"></script>
+  <script src="~/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -849,15 +851,10 @@
 
   <!-- Content Wrapper. Contains page content -->
         @RenderBody()
+        @RenderSection("Scripts", required: false)
   
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
-    </div>
-  </footer>
+  
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -868,10 +865,10 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="~/admin/plugins/jquery/jquery.min.js"></script>
+@* <script src="~/admin/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="~/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip --> *@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
@@ -892,7 +889,7 @@
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="~/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
-<script src="~/admin/plugins/summernote/summernote-bs4.min.js"></script>
+<@* script src="~/admin/plugins/summernote/summernote-bs4.min.js"></script> *@
 <!-- overlayScrollbars -->
 <script src="~/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->

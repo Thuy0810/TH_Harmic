@@ -6,9 +6,9 @@ namespace TH_Harmic.ViewComponents
 {
     public class ProductViewComponent : ViewComponent
     {
-        private readonly Th2Context _context;
+        private readonly TH_HarmicContext _context;
 
-        public ProductViewComponent(Th2Context context)
+        public ProductViewComponent(TH_HarmicContext context)
         {
 
             _context = context;
