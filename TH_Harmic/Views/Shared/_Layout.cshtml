@@ -1,6 +1,4 @@
-﻿@{
-    List<TbProduct> productNew = ViewBag.productNew;
-}
+﻿
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -486,21 +484,10 @@
                             <h4 class="mb-0">Shopping Cart</h4>
                             <a href="#" class="button-close"><i class="pe-7s-close"></i></a>
                         </div>
+
+                        
                         <ul class="minicart-list">
-                            @foreach (var item in productNew.Where(i=>(bool)i.IsActive) ){
-                                <li class="minicart-product">
-                                    <a class="product-item_remove" href="#">
-                                        <i class="pe-7s-close"></i>
-                                    </a>
-                                    <a href="shop.html" class="product-item_img">
-                                        <img class="img-full" src="@item.Image" alt="Product Image">
-                                    </a>
-                                    <div class="product-item_content">
-                                        <a class="product-item_title" href="shop.html">@item.Title</a>
-                                        <span class="product-item_quantity">@item.PriceSale</span>
-                                    </div>
-                                </li>
-                            }
+                            @await Component.InvokeAsync("ProductNew")
                            
                         </ul>
                     </div>

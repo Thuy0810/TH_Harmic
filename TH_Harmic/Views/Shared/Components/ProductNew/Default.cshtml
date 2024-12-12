@@ -1,0 +1,18 @@
+﻿@model IEnumerable<TH_Harmic.Models.TbProduct>
+
+
+@foreach (var item in Model.Where(i => (bool)i.IsActive))
+{
+    <li class="minicart-product">
+        <a class="product-item_remove" href="#">
+            <i class="pe-7s-close"></i>
+        </a>
+        <a href="shop.html" class="product-item_img">
+            <img class="img-full" src="@item.Image" alt="Product Image">
+        </a>
+        <div class="product-item_content">
+            <a class="product-item_title" href="shop.html">@item.Title</a>
+            <span class="product-item_quantity">@item.PriceSale</span>
+        </div>
+    </li>
+}
